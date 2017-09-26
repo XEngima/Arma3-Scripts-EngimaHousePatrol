@@ -1,0 +1,239 @@
+version=53;
+class EditorData
+{
+	moveGridStep=1;
+	angleGridStep=0.2617994;
+	scaleGridStep=1;
+	autoGroupingDist=10;
+	toggles=1;
+	class ItemIDProvider
+	{
+		nextID=9;
+	};
+	class MarkerIDProvider
+	{
+		nextID=1;
+	};
+	class Camera
+	{
+		pos[]={2895.7219,36.61216,6011.0542};
+		dir[]={-0.026653375,-0.32363406,0.94581044};
+		up[]={-0.0091166012,0.94618297,0.32350785};
+		aside[]={0.99960732,1.1821612e-008,0.028169436};
+	};
+};
+binarizationWanted=0;
+addons[]=
+{
+	"A3_Characters_F",
+	"A3_Ui_F"
+};
+class AddonsMetaData
+{
+	class List
+	{
+		items=2;
+		class Item0
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item1
+		{
+			className="A3_Ui_F";
+			name="Arma 3 - User Interface";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+	};
+};
+randomSeed=7497659;
+class ScenarioData
+{
+	author="daniel.eiserman";
+};
+class Mission
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=7;
+		day=6;
+		hour=12;
+		minute=0;
+		startFogDecay=0.014;
+		forecastFogDecay=0.014;
+	};
+	class Entities
+	{
+		items=7;
+		class Item0
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2896.4055,3.4358366,6054.9771};
+						angles[]={0,4.3721929,0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						isPlayer=1;
+					};
+					id=1;
+					type="B_officer_F";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=0;
+		};
+		class Item1
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2890.6631,3.5917416,6054.6904};
+						angles[]={0,5.3665905,0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						init="_nil = [this, ""patrolMarker"", ""SAFE"", 10, true] execVM ""Engima\HousePatrol\HousePatrol.sqf"";";
+					};
+					id=2;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male10ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=3;
+		};
+		class Item2
+		{
+			dataType="Marker";
+			position[]={2889.0803,3.068222,6079.502};
+			name="patrolMarker";
+			type="Empty";
+			id=4;
+		};
+		class Item3
+		{
+			dataType="Marker";
+			position[]={2888.9851,3.1064281,6078.1875};
+			name="house1Marker";
+			type="Empty";
+			id=5;
+		};
+		class Item4
+		{
+			dataType="Trigger";
+			position[]={3112.2578,34.686363,5962.7012};
+			class Attributes
+			{
+				onActivation="""patrolMarker"" setMarkerPos getMarkerPos ""house1Marker"";";
+				sizeA=0;
+				sizeB=0;
+				repeatable=1;
+				activationBy="ALPHA";
+			};
+			id=7;
+			type="EmptyDetector";
+			atlOffset=27.415909;
+		};
+		class Item5
+		{
+			dataType="Trigger";
+			position[]={3112.2578,34.56237,5954.2358};
+			class Attributes
+			{
+				onActivation="""patrolMarker"" setMarkerPos getMarkerPos ""house2Marker"";";
+				sizeA=0;
+				sizeB=0;
+				repeatable=1;
+				activationBy="BRAVO";
+			};
+			id=8;
+			type="EmptyDetector";
+			atlOffset=27.641907;
+		};
+		class Item6
+		{
+			dataType="Marker";
+			position[]={2909.5107,3.7620654,6070.541};
+			name="house2Marker";
+			type="Empty";
+			id=6;
+		};
+	};
+};
