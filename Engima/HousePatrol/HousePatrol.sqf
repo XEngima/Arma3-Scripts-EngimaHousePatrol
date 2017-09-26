@@ -6,12 +6,13 @@
 =============================================================================================
 
 HOW TO USE:
-Place a unit anywhere on the map. Put a marker close to a house. Put this in the init field:  
+Place a unit close to an enterable building on the map. Put a marker on the house. Put this
+in the init field of the unit:
 _nil = [this, "theMarker"] execVM "Engima\HousePatrol\HousePatrol.sqf";
 
-The unit will walk into the house that is nearest to the marker, and patrol it randomly. If 
+The unit will walk into the house that is closest to the marker, and patrol it randomly. If 
 the marker is moved to another house at any time, the unit will walk between the houses and 
-start patrolling the new house instead.
+start patrolling the other house instead.
 
 
 OPTIONAL SETTINGS:

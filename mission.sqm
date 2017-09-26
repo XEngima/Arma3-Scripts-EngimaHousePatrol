@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=9;
+		nextID=13;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2895.7219,36.61216,6011.0542};
-		dir[]={-0.026653375,-0.32363406,0.94581044};
-		up[]={-0.0091166012,0.94618297,0.32350785};
-		aside[]={0.99960732,1.1821612e-008,0.028169436};
+		pos[]={2883.0427,14.155292,6064.2241};
+		dir[]={0.817379,-0.49673662,-0.29183748};
+		up[]={0.46782017,0.86789924,-0.16703026};
+		aside[]={-0.33625567,1.6503327e-007,-0.94178396};
 	};
 };
 binarizationWanted=0;
@@ -76,7 +76,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=7;
+		items=8;
 		class Item0
 		{
 			dataType="Group";
@@ -89,37 +89,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2896.4055,3.4358366,6054.9771};
-						angles[]={0,4.3721929,0};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-						isPlayer=1;
-					};
-					id=1;
-					type="B_officer_F";
-				};
-			};
-			class Attributes
-			{
-			};
-			id=0;
-		};
-		class Item1
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2890.6631,3.5917416,6054.6904};
+						position[]={2900.512,3.6050007,6069.5439};
 						angles[]={0,5.3665905,0};
 					};
 					side="West";
@@ -179,7 +149,7 @@ class Mission
 			};
 			id=3;
 		};
-		class Item2
+		class Item1
 		{
 			dataType="Marker";
 			position[]={2889.0803,3.068222,6079.502};
@@ -187,7 +157,7 @@ class Mission
 			type="Empty";
 			id=4;
 		};
-		class Item3
+		class Item2
 		{
 			dataType="Marker";
 			position[]={2888.9851,3.1064281,6078.1875};
@@ -195,7 +165,7 @@ class Mission
 			type="Empty";
 			id=5;
 		};
-		class Item4
+		class Item3
 		{
 			dataType="Trigger";
 			position[]={3112.2578,34.686363,5962.7012};
@@ -211,7 +181,7 @@ class Mission
 			type="EmptyDetector";
 			atlOffset=27.415909;
 		};
-		class Item5
+		class Item4
 		{
 			dataType="Trigger";
 			position[]={3112.2578,34.56237,5954.2358};
@@ -227,13 +197,157 @@ class Mission
 			type="EmptyDetector";
 			atlOffset=27.641907;
 		};
-		class Item6
+		class Item5
 		{
 			dataType="Marker";
 			position[]={2909.5107,3.7620654,6070.541};
 			name="house2Marker";
 			type="Empty";
 			id=6;
+		};
+		class Item6
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2884.0759,2.8874388,6091.4897};
+					};
+					side="East";
+					flags=7;
+					class Attributes
+					{
+						init="_nil = [this, ""patrolMarker"", ""SAFE"", 10, true] execVM ""Engima\HousePatrol\HousePatrol.sqf"";";
+					};
+					id=10;
+					type="O_Soldier_F";
+					atlOffset=0.16599989;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male02PER";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.98000002;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=9;
+			atlOffset=0.16599989;
+		};
+		class Item7
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2897.28,3.481437,6060.209};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						isPlayer=1;
+					};
+					id=12;
+					type="C_man_p_beggar_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male05GRE";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.98000002;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=11;
 		};
 	};
 };
