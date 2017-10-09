@@ -2,58 +2,39 @@
 	Engima's House Patrol
 	Remade by Engima
 	Thanks to Tophe of Östgöta Ops [OOPS] for the original version!
-	Original version: TypeSqf CPack Tophe.RandomHousePatrol.
+	Original version: Tophe.RandomHousePatrol.
 =============================================================================================
 
 HOW TO USE:
-Place a unit close to an enterable building on the map. Put a marker on the house. Put this
-in the init field of the unit:
+Place a unit on the map. Put a marker on an enterable building and call it "theMarker". Put 
+this in the init field of the unit:
+
 _nil = [this, "theMarker"] execVM "Engima\HousePatrol\HousePatrol.sqf";
 
-The unit will walk into the house that is closest to the marker, and patrol it randomly. If 
-the marker is moved to another house at any time, the unit will walk between the houses and 
-start patrolling the other house instead.
-
+The unit will walk into the enterable house that is closest to the marker, and patrol it 
+randomly. If the marker is moved to another house at any time, the unit will walk out of the
+current house and to the other house, and start patrolling the other house instead.
 
 OPTIONAL SETTINGS:
 
-_nil = [this, MODE, STAND TIME, EXCLUDED POS, STARTING POS, STANCE, DEBUG] execVM "Tophe\HousePatrol\HousePatrol.sqf";
+_nil = [this, BEHAVIOR, MAXWAITINGTIME, DEBUG] execVM "Tophe\HousePatrol\HousePatrol.sqf";
+
+* UNIT - The unit that will be patroling. Must be local to the caller.
 
 * BEHAVIOUR - set unit behaviour.
-	guard = [this,"COMBAT"] execVM "Tophe\HousePatrol\HousePatrol.sqf" 
+	guard = [this, "COMBAT"] execVM "Engima\HousePatrol\HousePatrol.sqf" 
 	
 	Options: CARELESS, SAFE, AWARE, COMBAT, STEALTH
 	Default: SAFE
 
-* STAND TIME - Set maximum amount of seconds the unit will wait before moving to next waypoint.
-	guard = [this,"SAFE",50] execVM "Tophe\HousePatrol\HousePatrol.sqf" 
+* MAX WAITING TIME - The maximum amount of seconds the unit will wait before moving to the next waypoint.
+	guard = [this, "SAFE", 50] execVM "Engima\HousePatrol\HousePatrol.sqf" 
 		
 	Options: Any value in seconds. 0 = continuous patrol.
 	Default: 30
 
-* EXCLUDED POSITIONS - exclude certain building positions from patrol route.
-	guard = [this,"SAFE",30, [5,4]] execVM "Tophe\HousePatrol\HousePatrol.sqf" 
-	
-	Options: Array of building positions
-	Default: [] (no excluded positions)
-	
-* STARTING POS - Some building positions doesn't work well will the setPos command. 
-	Here you may add a custom starting pos. Negative number means starting pos will be randomized.
-	guard = [this,"SAFE",30, [5,4], 2] execVM "Tophe\HousePatrol\HousePatrol.sqf" 
-
-	Options: Any available building position
-	Default: -1 (random)
-
-* STANCE - Tell the unit what stance to use.
-	To keep the unit from going prone you can set this to MIDDLE or UP.
-	AUTO will be the standard behaviour and unit will crawl around in combat mode.
-	HIGH is the default mode. This is like AUTO but prone position is excluded.
-	
-	Options: UP, DOWN, MIDDLE, AUTO, HIGH
-	Default: HIGH
-	
 * DEBUG - Use markers and chatlog for mission design debugging.
-	guard = [this,"SAFE",30, [], -1, true] execVM "Tophe\HousePatrol\HousePatrol.sqf" 	
+	guard = [this, "SAFE", 30, true] execVM "Engima\HousePatrol\HousePatrol.sqf" 	
 	
 	Options: true/false
 	Default: false
@@ -99,7 +80,6 @@ _waitTime = 0;
 _timeout = 0;
 
 _behaviours = ["CARELESS", "SAFE", "AWARE", "COMBAT", "STEALTH"];
-//_stances = ["UP", "DOWN", "MIDDLE", "AUTO", "HIGH"];
 
 _name = vehicleVarName _unit;
 
